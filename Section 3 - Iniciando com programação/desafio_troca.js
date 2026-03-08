@@ -5,11 +5,15 @@
 let a = 7;
 let b = 94;
 
-console.log("Antes da troca:  a = " + a + ",  b = " + b);
+console.log("Antes da troca:                    a = " + a + ",  b = " + b);
 
 // Realizando a troca usando uma variável temporária
 let temp = a;
 a = 94;
 b = temp;
 
-console.log("Depois da troca: a = " + a + ", b = " + b);
+console.log("Depois da troca:                   a = " + a + ", b = " + b);
+
+// Realizando a troca usando desestruturação (ES6)
+[a, b] = [b, a];
+console.log("Depois da troca (desestruturação): a = " + a + ",  b = " + b);
