@@ -19,3 +19,4 @@ console.log("F xor V ->", xor(false, true));  // true
 console.log("F xor F ->", xor(false, false)); // false
 
 // 70. Operadores: Lógicos => 4:09
+// Criei a branch develop no repositório para testes
