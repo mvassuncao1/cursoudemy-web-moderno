@@ -21,3 +21,4 @@ console.log("F xor F ->", xor(false, false)); // false
 // 70. Operadores: Lógicos => 4:09
 // Criei a branch develop no repositório para testes
 // Commitei alterações na branch develop
+// Fiz merge da branch develop para a main
