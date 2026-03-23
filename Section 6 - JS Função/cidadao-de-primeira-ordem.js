@@ -41,4 +41,3 @@ function soma(a, b) {
 console.log(soma(2, 3)(4)); // Chama a função soma e passa os argumentos 2 e 3, o resultado é uma função que recebe um argumento c, e depois chama essa função passando o argumento 4, o resultado é a soma de 2 + 3 + 4 = 9
 const resultadoAB = soma(2, 3); // Chama a função soma e passa os argumentos 2 e 3, o resultado é uma função que recebe um argumento c
 console.log(resultadoAB(4)); // Chama a função que foi retornada pela função soma e passa o argumento 4, o resultado é a soma de 2 + 3 + 4 = 9
-// teste
