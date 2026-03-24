@@ -35,11 +35,13 @@
           vendas: { janeiro: 10, fevereiro: 20, março: 30 },
         },
         methods: {
+          // Os methods são funções comuns. Eles são executados toda vez que são chamados ou que o componente sofre uma re-renderização.
           horaCerta() {
             return new Date().toLocaleTimeString();
           },
         },
         computed: {
+          //As computed properties são como variáveis inteligentes. Elas são baseadas em suas dependências e possuem cache. Elas só são reavaliadas quando suas dependências mudam (o Vue lembra do valor delas e só recalcula quando necessário).
           precoComDesconto() {
             return this.preco * (1 - this.desconto);
           },
