@@ -1,15 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Binding</title>
-    <link rel="stylesheet" href="/css/estilo.css">
+    <link rel="stylesheet" href="/css/estilo.css" />
     <script src="/js/vue.min.js"></script>
-</head>
-<body class="exercicio">
-
+  </head>
+  <body class="exercicio">
+    <div id="app">
+      <p>{{link}}</p>
+      <p><a href="{{link}}">Link não funciona</a></p>
+      <p><a v-bind:href="link">Link com v-bind funciona</a></p>
+    </div>
     <script>
-        // ...
+      new Vue({
+        el: "#app",
+        data: {
+          link: "https://youtube.com/cod3rcursos",
+        },
+      });
     </script>
-</body>
+  </body>
 </html>
