@@ -3,12 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <title>Conceitos Básicos</title>
-    <link rel="stylesheet" href="./css/estilo.css" />
-    <script src="./js/vue.min.js"></script>
+    <link rel="stylesheet" href="/css/estilo.css" />
+    <script src="/js/vue.min.js"></script>
   </head>
   <body class="exercicio">
+    <div id="app">
+      <!--div de id 'app' que será referenciado no Vue -->
+      <p>1) {{ 2 + 2 }}</p>
+      <p>2) {{"teste".toUpperCase()}}</p>
+      <p>3) {{ new Date().toLocaleDateString() }}</p>
+      <p>
+        4) Produto armezanado nos dados abaixo: {{nome}}, preço: R$
+        {{preco.toLocaleString('pt-BR', { maximumFractionDigits: 2 })}},
+        desconto: {{(desconto * 100).toFixed(0)}}%, preço com desconto: R$ {{
+        precoComDesconto.toLocaleString('pt-BR', { maximumFractionDigits: 2 })
+        }}
+      </p>
+      <p>
+        5) Vendas: Janeiro: {{vendas.janeiro}}, Fevereiro: {{vendas.fevereiro}},
+        Março: {{vendas.março}}
+      </p>
+      <p>6) Hora certa: {{horaCerta()}}</p>
+    </div>
     <script>
-      // ...
+      new Vue({
+        el: "#app", //mesmo id da div onde o Vue vai atuar
+        data: {
+          nome: "Caneta",
+          preco: 6.89,
+          desconto: 0.15,
+          vendas: { janeiro: 10, fevereiro: 20, março: 30 },
+        },
+        methods: {
+          horaCerta() {
+            return new Date().toLocaleTimeString();
+          },
+        },
+        computed: {
+          precoComDesconto() {
+            return this.preco * (1 - this.desconto);
+          },
+        },
+      });
     </script>
   </body>
 </html>
