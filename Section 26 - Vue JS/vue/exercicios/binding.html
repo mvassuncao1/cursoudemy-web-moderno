@@ -8,15 +8,33 @@
   </head>
   <body class="exercicio">
     <div id="app">
-      <p>{{link}}</p>
-      <p><a href="{{link}}">Link não funciona</a></p>
+      <p>{{ link }}</p>
+      <p><a href="{{ link }}">Link com {chaves-duplas} não funciona</a></p>
       <p><a v-bind:href="link">Link com v-bind funciona</a></p>
+      <p><a :href="link">Link com : funciona</a></p>
+      <p>
+        <input type="text" v-model="nome" /><br />
+        <span>{{ nome }}</span><br />
+        Atualização em duas direções (binding birirecional)
+      </p>
+      <p>
+        <input type="text" :value="nome" /><br />
+        <span>{{ nome }}</span><br />
+        Binding de variável com :atributo (:value) mas não é birecional
+      </p>
     </div>
     <script>
       new Vue({
         el: "#app",
         data: {
           link: "https://youtube.com/cod3rcursos",
+          nome: "Maria",
+        },
+        watch: {
+          //monitora variáveis do atributo 'data' e chama a função se o valor da variável mudar
+          nome(novoValor) {
+            console.log(novoValor);
+          },
         },
       });
     </script>
