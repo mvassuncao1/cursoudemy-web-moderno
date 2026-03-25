@@ -14,23 +14,36 @@
         <button @click="add">+1 com @click</button>
       </p>
       <p><button @click="contador -= 2">-2 inline</button></p>
+      <p @mousemove="atualizarPosicao">
+        Coordenadas: {{x}} e {{y}}
+        <span @mousemove.stop>@mousemove.stop </span>
+        <span @mousemove="stopPropagation">@mousemove="stopPropagation"</span>
+        <input type="text" @keyup.enter="alerta" />
+      </p>
       <!--quando for clicado invoca o método add-->
     </div>
     <script>
       new Vue({
         el: "#app",
         data: {
-            x:0,
-            y:0,
+          x: 0,
+          y: 0,
           contador: 0,
         },
         methods: {
           add() {
             this.contador++;
           },
-          atualizarPosicao(e){ // CONTINUAR AULA DAQUI (AULA 478 - 4:45)
-
-          }
+          atualizarPosicao(e) {
+            this.x = e.clientX;
+            this.y = e.clientY;
+          },
+          stopPropagation(e) {
+            e.stopPropagation();
+          },
+          alerta() {
+            alert("Enter!");
+          },
         },
       });
     </script>
