@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <script src="./js/vue.min.js"></script>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="/js/vue.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <title>Relatório de Vendas</title>
 </head>
 
@@ -57,6 +57,11 @@
                     fetch("/data/sales.json")
                     .then(resp => resp.json())
                     .then(data => this.sales = data)
+                }
+            },
+            computed:{
+                salesByProduct{
+                    
                 }
             },
             mounted(){
