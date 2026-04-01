@@ -1,4 +1,4 @@
-#Curso Web Moderno:
+#Curso Web Moderno: *
 
 Conteúdo do Curso Web Moderno na Udemy - solicitado pela Prodabel
 
