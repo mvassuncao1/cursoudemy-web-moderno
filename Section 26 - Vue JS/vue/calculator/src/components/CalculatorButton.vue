@@ -1,5 +1,6 @@
 <template>
     <button class="button"
+    @click="$emit('onCalcButtonClick', label)"
         :class="{double, triple, operation}">
         {{label}}
     </button>
@@ -12,7 +13,6 @@ export default{
         operation: {type: Boolean},
         double: {type: Boolean},
         triple: {type: Boolean}
-
     }
 }
 </script>
@@ -48,7 +48,7 @@ export default{
     background-color: #fa8231;
     color: #fff
 }
-.button.operation{
+.button.operation:active{
     background-color: #fa8231cc;
 }
 </style>
